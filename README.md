@@ -4,6 +4,12 @@
 >
 > 1인 가구를 위한 스마트 식재료 관리 및 AI 맞춤 레시피 큐레이션 플랫폼
 
+### 🔗 라이브 데모 (웹)
+
+**https://naengkeum.duckdns.org** — AWS EC2 + Docker Compose + HTTPS(Let's Encrypt) 상시 배포
+
+> 📱 현재 `react-native` 브랜치는 **React Native(Expo) 모바일 포팅** 버전입니다. 앱: [`java_seoul_16_jaeyoung_boyoung/mobile`](java_seoul_16_jaeyoung_boyoung/mobile) · 백엔드는 위 웹과 동일 API 재사용.
+
 ---
 
 ## 📌 프로젝트 소개
