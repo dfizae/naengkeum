@@ -25,7 +25,13 @@ function atobLite(input) {
 function decodePayload(token) {
   try {
     const part = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')
-    return JSON.parse(atobLite(part))
+    // atobLite는 바이트열을 돌려주므로 UTF-8로 다시 해석해야 한글 닉네임이 깨지지 않는다.
+    const bytes = atobLite(part)
+    let encoded = ''
+    for (let i = 0; i < bytes.length; i++) {
+      encoded += '%' + ('0' + bytes.charCodeAt(i).toString(16)).slice(-2)
+    }
+    return JSON.parse(decodeURIComponent(encoded))
   } catch (_) {
     return null
   }
